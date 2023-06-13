@@ -1,7 +1,7 @@
 ##### DMG Media Project
 Thanks for giving me the opportunity to work on this project. I have used selenium with Java containing the OOP concept. I have used cucumber testing tool with BDD approach (Feature file). Junit has also been used for assertion and verification  in my project.
 My framework is based on OOP concept where  I have used encapsulation, Inheritance , polymorphism and abstraction to make my test cases more centralized, scalable, easy to maintain and reusable. My framework also entails the POM in which I have saved the main page of the website. However, if there were any more pages on the same project, I would of saved them separately under the Pages folder. I have a Hook class where i have saved the screenshot method.
-I run my test cases through Cukes Runners and there is also a class for failed test cases to save. I also have used Cucumber Pretty Report to display the graphical picture of the test cases which is user friendly and less time taking to understand for the non-technical people.
+I run my test cases through Cukes Runners. I also have used Cucumber Pretty Report to display the graphical picture of the test cases which is user friendly and less time taking to understand for the non-technical people.
 
 About The Project
 
