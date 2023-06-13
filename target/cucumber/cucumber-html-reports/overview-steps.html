@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>12 Jun 2023, 21:35</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.userSelectsTheFirstAvailableDateToBook()</td>
+              <td>1</td>
+              <td class="duration" data-value="231989900">0.231</td>
+              <td class="duration" data-value="231989900">0.231</td>
+              <td class="duration" data-value="231989900">0.231</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.userVerifiesTheDetailsGiven()</td>
+              <td>1</td>
+              <td class="duration" data-value="147225300">0.147</td>
+              <td class="duration" data-value="147225300">0.147</td>
+              <td class="duration" data-value="147225300">0.147</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_click_on_the_search_bar()</td>
+              <td>1</td>
+              <td class="duration" data-value="144279400">0.144</td>
+              <td class="duration" data-value="144279400">0.144</td>
+              <td class="duration" data-value="144279400">0.144</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_clicks_on_accept_all_cookies()</td>
+              <td>1</td>
+              <td class="duration" data-value="221108300">0.221</td>
+              <td class="duration" data-value="221108300">0.221</td>
+              <td class="duration" data-value="221108300">0.221</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_clicks_on_book_online_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="174021500">0.174</td>
+              <td class="duration" data-value="174021500">0.174</td>
+              <td class="duration" data-value="174021500">0.174</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_clicks_on_book_online_button2()</td>
+              <td>1</td>
+              <td class="duration" data-value="1386528200">1.386</td>
+              <td class="duration" data-value="1386528200">1.386</td>
+              <td class="duration" data-value="1386528200">1.386</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_clicks_on_continue_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="1631701500">1.631</td>
+              <td class="duration" data-value="1631701500">1.631</td>
+              <td class="duration" data-value="1631701500">1.631</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_clicks_on_india_in_drop_down()</td>
+              <td>1</td>
+              <td class="duration" data-value="4768170300">4.768</td>
+              <td class="duration" data-value="4768170300">4.768</td>
+              <td class="duration" data-value="4768170300">4.768</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_clicks_on_select_your_rooms_and_continue()</td>
+              <td>1</td>
+              <td class="duration" data-value="110082200">0.110</td>
+              <td class="duration" data-value="110082200">0.110</td>
+              <td class="duration" data-value="110082200">0.110</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_clicks_on_the_accomodation_section()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_clicks_on_the_date_departure_passengers_section()</td>
+              <td>1</td>
+              <td class="duration" data-value="2437173600">2.437</td>
+              <td class="duration" data-value="2437173600">2.437</td>
+              <td class="duration" data-value="2437173600">2.437</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_fills_the_personal_detail_in_the_form()</td>
+              <td>1</td>
+              <td class="duration" data-value="4727030000">4.727</td>
+              <td class="duration" data-value="4727030000">4.727</td>
+              <td class="duration" data-value="4727030000">4.727</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_makes_the_note_of()</td>
+              <td>1</td>
+              <td class="duration" data-value="125022400">0.125</td>
+              <td class="duration" data-value="125022400">0.125</td>
+              <td class="duration" data-value="125022400">0.125</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_navigates_to_mail_travel_home_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="6914852700">6.914</td>
+              <td class="duration" data-value="6914852700">6.914</td>
+              <td class="duration" data-value="6914852700">6.914</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_scrolls_the_bottom_of_the_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="117520200">0.117</td>
+              <td class="duration" data-value="117520200">0.117</td>
+              <td class="duration" data-value="117520200">0.117</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_selects_adults(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="198496400">0.198</td>
+              <td class="duration" data-value="198496400">0.198</td>
+              <td class="duration" data-value="198496400">0.198</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_selects_email_from_the_drop_down_in_where_did_you_hear_about_us()</td>
+              <td>1</td>
+              <td class="duration" data-value="180766400">0.180</td>
+              <td class="duration" data-value="180766400">0.180</td>
+              <td class="duration" data-value="180766400">0.180</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_selects_in_number_required_drop_down(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="1373239700">1.373</td>
+              <td class="duration" data-value="1373239700">1.373</td>
+              <td class="duration" data-value="1373239700">1.373</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_should_see_tile_as_home_page_mail_travel(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="16542600">0.016</td>
+              <td class="duration" data-value="16542600">0.016</td>
+              <td class="duration" data-value="16542600">0.016</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_types_india_in_the_search_box(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="104094700">0.104</td>
+              <td class="duration" data-value="104094700">0.104</td>
+              <td class="duration" data-value="104094700">0.104</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_verifies_book_now_button_is_enabled()</td>
+              <td>1</td>
+              <td class="duration" data-value="33056300">0.033</td>
+              <td class="duration" data-value="33056300">0.033</td>
+              <td class="duration" data-value="33056300">0.033</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.dmg_media.step_definitions.MailTravel_HomePage_Step_Definition.user_verifies_confirm_details_book_page_is_enabled()</td>
+              <td>1</td>
+              <td class="duration" data-value="6062150700">6.062</td>
+              <td class="duration" data-value="6062150700">6.062</td>
+              <td class="duration" data-value="6062150700">6.062</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>22</td>
+            <td>22</td>
+            <td class="duration">1.413</td>
+            <td class="duration">6.914</td>
+            <td class="duration">31.105</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
