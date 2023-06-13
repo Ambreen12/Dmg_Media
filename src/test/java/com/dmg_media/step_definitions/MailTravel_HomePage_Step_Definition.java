@@ -8,15 +8,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.concurrent.TimeUnit;
 
 
 
@@ -33,7 +26,7 @@ public class MailTravel_HomePage_Step_Definition {
     public void user_navigates_to_mail_travel_home_page() {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-       // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
     }
 
     @When("user should see tile as  {string}")
@@ -64,12 +57,13 @@ public class MailTravel_HomePage_Step_Definition {
     public void user_types_india_in_the_search_box(String countryName) {
         mailTravel_homePage.searchBar.sendKeys(countryName);
     }
-
-    @Then("user clicks on india in drop down")
-    public void user_clicks_on_india_in_drop_down() {
+    @Then("user clicks on india and Shimla Extension in drop down")
+    public void user_Clicks_On_India_And_Shimla_Extension_In_Drop_Down() {
         mailTravel_homePage.clickOnIndiaFromDropDown.click();
-
     }
+
+
+
 
     @When("user clicks on book online button")
     public void user_clicks_on_book_online_button() {
@@ -117,7 +111,8 @@ public class MailTravel_HomePage_Step_Definition {
     }
 
     @When("user clicks on the  Date, Departure & Passengers section")
-    public void user_clicks_on_the_date_departure_passengers_section() {
+    public void user_clicks_on_the_date_departure_passengers_section() throws InterruptedException {
+        Thread.sleep(3);
         mailTravel_homePage.dateDeparturePassengerHeading.click();
 
     }
@@ -125,6 +120,7 @@ public class MailTravel_HomePage_Step_Definition {
     @Then("user verifies the details given")
     public void userVerifiesTheDetailsGiven() {
 
+BrowserUtils.waitForElementDisplayed(mailTravel_homePage.verifyTheNumberOfAdults);
         Assert.assertEquals(numberOfAdults,mailTravel_homePage.verifyTheNumberOfAdults.getText());
         Assert.assertEquals(departureAirPort,mailTravel_homePage.verifyTheDepartureAirPort.getText());
         Assert.assertEquals(deapartureDate,mailTravel_homePage.verifyTheDepartureDate.getText());
@@ -133,17 +129,23 @@ public class MailTravel_HomePage_Step_Definition {
 
     @When("user clicks on the accomodation section")
     public void user_clicks_on_the_accomodation_section() {
-/*
+
+        /*
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", mailTravel_homePage.accomodationHeading);
 
         //mailTravel_homePage.accomodationHeading.click();
 */
+
+
+
     }
 
     @When("user selects {string} in number required drop down")
-    public void user_selects_in_number_required_drop_down(String number) {
+    public void user_selects_in_number_required_drop_down(String number)  {
 
+
+BrowserUtils.waitForElementDisplayed(mailTravel_homePage.roomNumberRequired);
         Select select = new Select(mailTravel_homePage.roomNumberRequired);
         select.selectByVisibleText(number);
     }
@@ -216,6 +218,7 @@ BrowserUtils.waitForElementDisplayed(mailTravel_homePage.person1Title);
     public void user_verifies_book_now_button_is_enabled() {
         Assert.assertTrue(mailTravel_homePage.bookNOWButton.isEnabled());
     }
+
 
 
 }

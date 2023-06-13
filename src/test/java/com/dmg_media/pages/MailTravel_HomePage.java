@@ -1,6 +1,6 @@
 package com.dmg_media.pages;
 
-import com.dmg_media.utils.ConfigurationReader;
+
 import com.dmg_media.utils.Driver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.WebElement;
@@ -28,7 +28,7 @@ public class MailTravel_HomePage {
     @FindBy(xpath = "//button[@name='enterbookingflow']")
     public WebElement clickOnBookOnlineButton;
 
-    // for the text for airport //div[@id='departure-selection']
+
     @FindBy(xpath = "//div[@id='departure-selection']")
     public WebElement textOfDepartureAirPort;
 
@@ -44,7 +44,7 @@ public class MailTravel_HomePage {
     @FindBy(xpath = "//a[@href='#dates_and_prices_title']")
     public WebElement dateAndPrices;
 
-    // @FindBy(id = "calbox-f0050aa159413059b0d39248658bdb50-1")
+
     @FindBy(xpath = "(//div[@class='nbf_tpl_pms_calendar_tablecontainer']/div[5]//div[1])[1]")
     public WebElement selectTheFirstAvailableDate;
 
