@@ -1,23 +1,26 @@
 package com.dmg_media.step_definitions;
 
-import com.dmg_media.utils.ConfigurationReader;
-import com.dmg_media.utils.Driver;
-import io.cucumber.java.Before;
-import org.openqa.selenium.WebDriver;
 
-import java.lang.module.Configuration;
-import java.util.concurrent.TimeUnit;
+import com.dmg_media.utils.Driver;
+import io.cucumber.java.After;
+
+import io.cucumber.java.Scenario;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+
 
 public class Hooks {
 
-    //public static WebDriver driver;
+    @After
+     public  void afterTests(Scenario scenario){
+        if(scenario.isFailed()){
+            byte[]screenShots= ((TakesScreenshot)Driver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            scenario.attach(screenShots,"image/png",scenario.getName());
 
+        }
+      //  Driver.closeDriver();
 
-   // @Before()
-   // public void setUp() {
-     //   driver = Driver.getDriver(ConfigurationReader.getProperty("url"));
-       // driver.manage().window().maximize();
-        //driver.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
-    //}
+    }
 }
 

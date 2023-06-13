@@ -47,11 +47,8 @@ public class MailTravel_HomePage_Step_Definition {
 
     @Then("user clicks on  Accept All cookies")
     public void user_clicks_on_accept_all_cookies() {
-/*
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[.='Accept All Cookies']")));
-        mailTravel_homePage.clickOnAcceptCookies.click();
-*/
+
+
         JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].click();", mailTravel_homePage.clickOnAcceptCookies);
 
@@ -158,36 +155,36 @@ public class MailTravel_HomePage_Step_Definition {
     }
 
     @When("user fills the personal detail in the form")
-    public void user_fills_the_personal_detail_in_the_form() throws InterruptedException {
-Thread.sleep(5);
+    public void user_fills_the_personal_detail_in_the_form()  {
+BrowserUtils.waitForElementDisplayed(mailTravel_homePage.person1Title);
         Select select = new Select(mailTravel_homePage.person1Title);
         select.selectByIndex(1);
         mailTravel_homePage.p1FirstName.sendKeys("Alison");
         mailTravel_homePage.p1LastName.sendKeys("Williams");
-        Select select1 = new Select(mailTravel_homePage.p1DateOfBirthDay);
-        select1.selectByValue("4");
-        Select select2 = new Select(mailTravel_homePage.getP1DateOfBirthMonth);
-        select2.selectByVisibleText("March");
-        Select select3 = new Select(mailTravel_homePage.getP1DateOfBirthYear);
-        select3.selectByVisibleText("1982");
-        Select select4 = new Select(mailTravel_homePage.person2Title);
-        select4.selectByIndex(1);
+        select = new Select(mailTravel_homePage.p1DateOfBirthDay);
+        select.selectByValue("4");
+        select = new Select(mailTravel_homePage.getP1DateOfBirthMonth);
+        select.selectByVisibleText("March");
+        select = new Select(mailTravel_homePage.getP1DateOfBirthYear);
+        select.selectByVisibleText("1982");
+        select = new Select(mailTravel_homePage.person2Title);
+        select.selectByIndex(1);
         mailTravel_homePage.p2FirstName.sendKeys("Mark");
         mailTravel_homePage.p2LastName.sendKeys("Williams");
-        Select select5 = new Select(mailTravel_homePage.p2DateOfBirthDay);
-        select5.selectByValue("18");
-        Select select6 = new Select(mailTravel_homePage.getP2DateOfBirthMonth);
-        select6.selectByVisibleText("June");
-        Select select7 = new Select(mailTravel_homePage.getP2DateOfBirthYear);
-        select7.selectByVisibleText("1979");
+        select = new Select(mailTravel_homePage.p2DateOfBirthDay);
+        select.selectByValue("18");
+        select = new Select(mailTravel_homePage.getP2DateOfBirthMonth);
+        select.selectByVisibleText("June");
+        select = new Select(mailTravel_homePage.getP2DateOfBirthYear);
+        select.selectByVisibleText("1979");
         mailTravel_homePage.enterMobileNumber.sendKeys("07704545045");
         mailTravel_homePage.email.sendKeys("alison13@hotmail.com");
         mailTravel_homePage.addressLine1.sendKeys("262");
         mailTravel_homePage.addressLine2.sendKeys("Southbush Lane");
         mailTravel_homePage.city.sendKeys("Reading");
         mailTravel_homePage.postCode.sendKeys("RG6 7BH");
-        Select select8= new Select(mailTravel_homePage.countryName);
-        select8.selectByVisibleText("United Kingdom");
+        select= new Select(mailTravel_homePage.countryName);
+        select.selectByVisibleText("United Kingdom");
 
 
     }
@@ -208,7 +205,7 @@ Thread.sleep(5);
 
     @When("user verifies Confirm Details + Book page is enabled")
     public void user_verifies_confirm_details_book_page_is_enabled() throws InterruptedException {
-        Thread.sleep(5);
+        BrowserUtils.waitForElementDisplayed(mailTravel_homePage.confirmDetailsAndBookText);
 
         Assert.assertEquals(mailTravel_homePage.confirmDetailsAndBookText.getText(),textDisplayed);
         System.out.println("mailTravel_homePage = " + mailTravel_homePage);
