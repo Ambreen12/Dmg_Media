@@ -12,14 +12,13 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.support.ui.Select;
 
 
-
 public class MailTravel_HomePage_Step_Definition {
 
     MailTravel_HomePage mailTravel_homePage = new MailTravel_HomePage();
-    String numberOfAdults="2";
-    String departureAirPort="London Heathrow (LHR)";
-    String deapartureDate="Mon, 25 Sep 2023";
-    String textDisplayed= "Confirm Details + Book";
+    String numberOfAdults = "2";
+    String departureAirPort = "London Heathrow (LHR)";
+    String deapartureDate = "Mon, 25 Sep 2023";
+    String textDisplayed = "Confirm Details + Book";
 
 
     @When("user navigates to mail travel home page")
@@ -57,18 +56,17 @@ public class MailTravel_HomePage_Step_Definition {
     public void user_types_india_in_the_search_box(String countryName) {
         mailTravel_homePage.searchBar.sendKeys(countryName);
     }
+
     @Then("user clicks on india and Shimla Extension in drop down")
     public void user_Clicks_On_India_And_Shimla_Extension_In_Drop_Down() {
         mailTravel_homePage.clickOnIndiaFromDropDown.click();
     }
 
 
-
-
     @When("user clicks on book online button")
     public void user_clicks_on_book_online_button() {
         //JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
-       // js.executeScript("arguments[0].click();", mailTravel_homePage.clickOnAcceptCookies);
+        // js.executeScript("arguments[0].click();", mailTravel_homePage.clickOnAcceptCookies);
 
         mailTravel_homePage.clickOnBookOnlineButton.click();
     }
@@ -120,10 +118,10 @@ public class MailTravel_HomePage_Step_Definition {
     @Then("user verifies the details given")
     public void userVerifiesTheDetailsGiven() {
 
-BrowserUtils.waitForElementDisplayed(mailTravel_homePage.verifyTheNumberOfAdults);
-        Assert.assertEquals(numberOfAdults,mailTravel_homePage.verifyTheNumberOfAdults.getText());
-        Assert.assertEquals(departureAirPort,mailTravel_homePage.verifyTheDepartureAirPort.getText());
-        Assert.assertEquals(deapartureDate,mailTravel_homePage.verifyTheDepartureDate.getText());
+        BrowserUtils.waitForElementDisplayed(mailTravel_homePage.verifyTheNumberOfAdults);
+        Assert.assertEquals(numberOfAdults, mailTravel_homePage.verifyTheNumberOfAdults.getText());
+        Assert.assertEquals(departureAirPort, mailTravel_homePage.verifyTheDepartureAirPort.getText());
+        Assert.assertEquals(deapartureDate, mailTravel_homePage.verifyTheDepartureDate.getText());
 
     }
 
@@ -138,14 +136,13 @@ BrowserUtils.waitForElementDisplayed(mailTravel_homePage.verifyTheNumberOfAdults
 */
 
 
-
     }
 
     @When("user selects {string} in number required drop down")
-    public void user_selects_in_number_required_drop_down(String number)  {
+    public void user_selects_in_number_required_drop_down(String number) {
 
 
-BrowserUtils.waitForElementDisplayed(mailTravel_homePage.roomNumberRequired);
+        BrowserUtils.waitForElementDisplayed(mailTravel_homePage.roomNumberRequired);
         Select select = new Select(mailTravel_homePage.roomNumberRequired);
         select.selectByVisibleText(number);
     }
@@ -157,8 +154,8 @@ BrowserUtils.waitForElementDisplayed(mailTravel_homePage.roomNumberRequired);
     }
 
     @When("user fills the personal detail in the form")
-    public void user_fills_the_personal_detail_in_the_form()  {
-BrowserUtils.waitForElementDisplayed(mailTravel_homePage.person1Title);
+    public void user_fills_the_personal_detail_in_the_form() {
+        BrowserUtils.waitForElementDisplayed(mailTravel_homePage.person1Title);
         Select select = new Select(mailTravel_homePage.person1Title);
         select.selectByIndex(1);
         mailTravel_homePage.p1FirstName.sendKeys("Alison");
@@ -185,7 +182,7 @@ BrowserUtils.waitForElementDisplayed(mailTravel_homePage.person1Title);
         mailTravel_homePage.addressLine2.sendKeys("Southbush Lane");
         mailTravel_homePage.city.sendKeys("Reading");
         mailTravel_homePage.postCode.sendKeys("RG6 7BH");
-        select= new Select(mailTravel_homePage.countryName);
+        select = new Select(mailTravel_homePage.countryName);
         select.selectByVisibleText("United Kingdom");
 
 
@@ -209,7 +206,7 @@ BrowserUtils.waitForElementDisplayed(mailTravel_homePage.person1Title);
     public void user_verifies_confirm_details_book_page_is_enabled() throws InterruptedException {
         BrowserUtils.waitForElementDisplayed(mailTravel_homePage.confirmDetailsAndBookText);
 
-        Assert.assertEquals(mailTravel_homePage.confirmDetailsAndBookText.getText(),textDisplayed);
+        Assert.assertEquals(mailTravel_homePage.confirmDetailsAndBookText.getText(), textDisplayed);
         System.out.println("mailTravel_homePage = " + mailTravel_homePage);
 
     }
@@ -218,7 +215,6 @@ BrowserUtils.waitForElementDisplayed(mailTravel_homePage.person1Title);
     public void user_verifies_book_now_button_is_enabled() {
         Assert.assertTrue(mailTravel_homePage.bookNOWButton.isEnabled());
     }
-
 
 
 }

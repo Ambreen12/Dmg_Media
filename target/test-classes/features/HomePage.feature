@@ -13,7 +13,7 @@ Feature: Mail Travel page functionality and a booking holiday for India
   Scenario: User look for the search bar to type the destination
     When user click on the search bar
     And user types "India and Shimla Extension" in the search box
-    Then user clicks on india in drop down
+    Then user clicks on india and Shimla Extension in drop down
 
   Scenario: User clicks on Book Online button
     When user clicks on book online button

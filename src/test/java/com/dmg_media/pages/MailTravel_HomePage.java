@@ -94,22 +94,22 @@ public class MailTravel_HomePage {
     @FindBy(xpath = "//*[@id='pax-a-doby-2']")
     public WebElement getP2DateOfBirthYear;
 
-    @FindBy (id="contact-mobile")
+    @FindBy(id = "contact-mobile")
     public WebElement enterMobileNumber;
 
-    @FindBy (id = "contact-email")
+    @FindBy(id = "contact-email")
     public WebElement email;
-    @FindBy (id = "contact-address1")
+    @FindBy(id = "contact-address1")
     public WebElement addressLine1;
 
-    @FindBy (id = "contact-address2")
+    @FindBy(id = "contact-address2")
     public WebElement addressLine2;
 
-    @FindBy (id = "contact-city")
+    @FindBy(id = "contact-city")
     public WebElement city;
-    @FindBy (id = "contact-postcode")
+    @FindBy(id = "contact-postcode")
     public WebElement postCode;
-    @FindBy (id = "contact-country")
+    @FindBy(id = "contact-country")
     public WebElement countryName;
 
 
