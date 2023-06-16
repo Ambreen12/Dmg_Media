@@ -209,12 +209,19 @@ public class MailTravel_HomePage_Step_Definition {
         Assert.assertEquals(mailTravel_homePage.confirmDetailsAndBookText.getText(), textDisplayed);
         System.out.println("mailTravel_homePage = " + mailTravel_homePage);
 
-    }
+            JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView();", mailTravel_homePage.bookNOWButton);
+
+
+        }
+
+
 
     @When("user verifies Book Now button is enabled")
     public void user_verifies_book_now_button_is_enabled() {
         Assert.assertTrue(mailTravel_homePage.bookNOWButton.isEnabled());
     }
+
 
 
 }
